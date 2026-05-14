@@ -6,3 +6,41 @@ Fri May  8 10:07:21 PM UTC 2026:
  tests:  0|6
 ========================================
 36e8bf5
+Thu May 14 06:43:02 AM UTC 2026: 
+ graph.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+Compilation failed
+In file included from test.c:5:
+graph.c:18:3: error: conflicting types for ‘Edge’; have ‘struct Edge’
+   18 | } Edge;
+      |   ^~~~
+In file included from graph.c:6:
+graph.h:11:3: note: previous declaration of ‘Edge’ with type ‘Edge’
+   11 | } Edge;
+      |   ^~~~
+graph.c: In function ‘createGraph’:
+graph.c:40:27: error: too few arguments to function ‘map_create’
+   40 |     grafo->adjacencyMap = map_create();
+      |                           ^~~~~~~~~~
+In file included from graph.c:8:
+map.h:14:6: note: declared here
+   14 | Map *map_create(int (*is_equal)(void *key1, void *key2)); // unsorted map
+      |      ^~~~~~~~~~
+graph.c: In function ‘addNode’:
+graph.c:48:33: error: expected expression before ‘)’ token
+   48 |     map_insert(g->adjacencyMap, )
+      |                                 ^
+graph.c:48:5: error: too few arguments to function ‘map_insert’
+   48 |     map_insert(g->adjacencyMap, )
+      |     ^~~~~~~~~~
+map.h:18:6: note: declared here
+   18 | void map_insert(Map *map, void *key, void *value);
+      |      ^~~~~~~~~~
+graph.c:47:11: error: unused variable ‘newlist’ [-Werror=unused-variable]
+   47 |     List* newlist = list_create();
+      |           ^~~~~~~
+graph.c:46:17: error: unused variable ‘copiaLabel’ [-Werror=unused-variable]
+   46 |     const char* copiaLabel = strdup(label);
+      |                 ^~~~~~~~~~
+cc1: all warnings being treated as errors
+7735fcd

@@ -11,6 +11,12 @@
 /* =========================================
  *         ESTRUCTURAS INTERNAS
  * ========================================= */
+// Representa una conexión entre dos nodos
+typedef struct Edge {
+    char* target;   // Nombre del nodo destino
+    int weight;     // Peso o costo de la arista
+} Edge;
+
 
 struct Graph {
     // Un solo mapa basta: Llave (char* label) -> Valor (List* de Edge*)
@@ -27,11 +33,19 @@ int is_equal_string(void *key1, void *key2) {
  * ========================================= */
 
 Graph* createGraph() {
-    return NULL;
+    Graph* grafo = (Graph*)malloc(sizeof(Graph));
+    if(grafo == NULL){
+        return NULL;
+    }
+    grafo->adjacencyMap = map_create();
+    return grafo;
 }
 
 void addNode(Graph* g, const char* label) {
     if (!g || !label) return;
+    const char* copiaLabel = strdup(label);
+    List* newlist = list_create();
+    map_insert(g->adjacencyMap, )
 
 }
 
