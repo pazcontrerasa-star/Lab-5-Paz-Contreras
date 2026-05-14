@@ -99,3 +99,18 @@ graph.c:47:17: error: unused variable ‘copiaLabel’ [-Werror=unused-variable]
       |                 ^~~~~~~~~~
 cc1: all warnings being treated as errors
 3762bca
+Thu May 14 06:58:29 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:49:33: error: passing argument 2 of ‘map_insert’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   49 |     map_insert(g->adjacencyMap, copiaLabel, newlist );
+      |                                 ^~~~~~~~~~
+In file included from graph.c:8:
+map.h:18:33: note: expected ‘void *’ but argument is of type ‘const char *’
+   18 | void map_insert(Map *map, void *key, void *value);
+      |                           ~~~~~~^~~
+cc1: all warnings being treated as errors
+16d68bf
