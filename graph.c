@@ -38,7 +38,7 @@ Graph* createGraph() {
     if(grafo == NULL){
         return NULL;
     }
-    grafo->adjacencyMap = map_create();
+    grafo->adjacencyMap = map_create(is_equal_string);
     return grafo;
 }
 
