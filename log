@@ -215,3 +215,26 @@ Sun May 17 06:46:45 PM UTC 2026:
  tests:  12|0
 ========================================
 e8e3c41
+Sun May 17 07:13:07 PM UTC 2026: 
+ graph.c | 16 +++++++++++-----
+ 1 file changed, 11 insertions(+), 5 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:99:49: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   99 |     MapPair* pair = map_search(g->adjacencyMap, label);
+      |                                                 ^~~~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+graph.c:102:39: error: ‘lastaAristas’ undeclared (first use in this function); did you mean ‘listaAristas’?
+  102 |     Edge* auxEdge = (Edge*)list_first(lastaAristas);
+      |                                       ^~~~~~~~~~~~
+      |                                       listaAristas
+graph.c:102:39: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:99:14: error: unused variable ‘pair’ [-Werror=unused-variable]
+   99 |     MapPair* pair = map_search(g->adjacencyMap, label);
+      |              ^~~~
+cc1: all warnings being treated as errors
+93fff74
