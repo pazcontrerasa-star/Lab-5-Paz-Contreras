@@ -169,3 +169,22 @@ Sun May 17 05:19:21 PM UTC 2026:
  1 file changed, 2 insertions(+), 2 deletions(-)
  tests:  0|0
 257f53c
+Sun May 17 05:31:21 PM UTC 2026: 
+ graph.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getEdges’:
+graph.c:72:35: error: ‘Graph’ has no member named ‘adjancencyMap’; did you mean ‘adjacencyMap’?
+   72 |     MapPair* pair = map_search(g->adjancencyMap, (void*)label);
+      |                                   ^~~~~~~~~~~~~
+      |                                   adjacencyMap
+graph.c:74:25: error: ‘list’ undeclared (first use in this function); did you mean ‘List’?
+   74 |     List* nuevaLista = (list*)pair->value;
+      |                         ^~~~
+      |                         List
+graph.c:74:25: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:74:30: error: expected expression before ‘)’ token
+   74 |     List* nuevaLista = (list*)pair->value;
+      |                              ^
+96478ae
