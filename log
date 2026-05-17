@@ -151,3 +151,16 @@ graph.c:59:22: error: ‘false’ undeclared (first use in this function)
       |                      ^~~~~
 graph.c:59:22: note: ‘false’ is defined in header ‘<stdbool.h>’; this is probably fixable by adding ‘#include <stdbool.h>’
 6c8e3ab
+Sun May 17 05:18:14 PM UTC 2026: 
+ graph.c | 20 ++++++++++++--------
+ 1 file changed, 12 insertions(+), 8 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c:19:3: error: conflicting types for ‘Edge’; have ‘struct Edge’
+   19 | } Edge;
+      |   ^~~~
+In file included from graph.c:6:
+graph.h:11:3: note: previous declaration of ‘Edge’ with type ‘Edge’
+   11 | } Edge;
+      |   ^~~~
+b0d5253
