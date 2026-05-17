@@ -238,3 +238,19 @@ graph.c:99:14: error: unused variable ‘pair’ [-Werror=unused-variable]
       |              ^~~~
 cc1: all warnings being treated as errors
 93fff74
+Sun May 17 07:13:41 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:102:39: error: ‘lastaAristas’ undeclared (first use in this function); did you mean ‘listaAristas’?
+  102 |     Edge* auxEdge = (Edge*)list_first(lastaAristas);
+      |                                       ^~~~~~~~~~~~
+      |                                       listaAristas
+graph.c:102:39: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:99:14: error: unused variable ‘pair’ [-Werror=unused-variable]
+   99 |     MapPair* pair = map_search(g->adjacencyMap, (void*)label);
+      |              ^~~~
+cc1: all warnings being treated as errors
+d266505
