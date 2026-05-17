@@ -13,10 +13,10 @@
  * ========================================= */
 // Representa una conexión entre dos nodos
 
-typedef struct Edge {
+struct Edge {
     char* target;   // Nombre del nodo destino
     int weight;     // Peso o costo de la arista
-} Edge;
+};
 
 
 struct Graph {
