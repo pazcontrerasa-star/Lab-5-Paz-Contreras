@@ -52,6 +52,13 @@ void addNode(Graph* g, const char* label) {
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     if (!g || !src || !dest) return;
+    Map* aux = g->adjacencyMap;
+    while(aux!= NULL){
+        existe= true;
+        if(aux->key != src){
+            existe = false;
+        }
+    }
 
 }
 

@@ -125,3 +125,29 @@ ab4aa3e
 Thu May 14 07:57:45 PM UTC 2026: 
  tests:  0|0
 0a5a8c3
+Sun May 17 03:57:20 PM UTC 2026: 
+ graph.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:57:9: error: ‘existe’ undeclared (first use in this function); did you mean ‘exit’?
+   57 |         existe= true;
+      |         ^~~~~~
+      |         exit
+graph.c:57:9: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:57:17: error: ‘true’ undeclared (first use in this function)
+   57 |         existe= true;
+      |                 ^~~~
+graph.c:9:1: note: ‘true’ is defined in header ‘<stdbool.h>’; this is probably fixable by adding ‘#include <stdbool.h>’
+    8 | #include "map.h"
+  +++ |+#include <stdbool.h>
+    9 | // Se asume la inclusión de Map.h y List.h
+graph.c:58:15: error: invalid use of incomplete typedef ‘Map’
+   58 |         if(aux->key != src){
+      |               ^~
+graph.c:59:22: error: ‘false’ undeclared (first use in this function)
+   59 |             existe = false;
+      |                      ^~~~~
+graph.c:59:22: note: ‘false’ is defined in header ‘<stdbool.h>’; this is probably fixable by adding ‘#include <stdbool.h>’
+6c8e3ab
